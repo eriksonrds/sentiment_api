@@ -16,9 +16,9 @@ def analyze_sentiment(texto: str) -> str:
     scores = analyzer.polarity_scores(texto)
     compound = scores["compound"]
 
-    if compound >= 0.3:
+    if compound >= 0.1:
         return "positiva"
-    elif compound <= -0.3:
+    elif compound <= -0.1:
         return "negativa"
     else:
         return "neutra"
