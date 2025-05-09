@@ -135,7 +135,7 @@ A variação na acurácia depende diretamente do threshold escolhido para o `com
 * Com configuração **mais permissiva** (threshold ±0.1), foi possível atingir **até 70% de acerto**.
 * Com configuração **mais conservadora** (threshold ±0.4), a acurácia ficou em torno de **60%**, com menor risco de falsos positivos (ex: classificar algo neutro como positivo).
 
-Essa escolha representa um equilíbrio entre sensibilidade e precisão, e demonstra atenção prática à calibragem do classificador de acordo com o comportamento dos dados.
+No conjunto de testes fornecido, thresholds mais permissivos (±0.1) resultaram em maior número de classificações corretas, mas também em alguns falsos positivos (ex: avaliações neutras classificadas como positivas). Já valores mais conservadores (±0.4) evitaram esses casos, mas erraram mais avaliações negativas ou ambíguas. Ou seja, a escolha do threshold influencia diretamente o tipo de erro que o modelo tende a cometer.
 
 ### Flexibilidade para evolução
 
