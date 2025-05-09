@@ -1,3 +1,12 @@
+"""
+Executa a análise de sentimento sobre os exemplos fornecidos no anexo do teste técnico.
+
+Compara a classificação esperada com a classificação detectada pelo modelo atual
+e imprime no console se cada caso passou ou falhou.
+
+Este script é útil para validar rapidamente a performance geral do classificador implementado.
+"""
+
 from app.sentiment import analyze_sentiment
 from pprint import pprint
 

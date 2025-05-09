@@ -5,13 +5,18 @@ analyzer = SentimentIntensityAnalyzer()
 
 def analyze_sentiment(texto: str) -> str:
     """
-    Realiza análise de sentimento usando VADER.
+    Classifica o sentimento de um texto como 'positiva', 'negativa' ou 'neutra' utilizando VADER.
+
+    A análise é baseada no score compound retornado pelo VADER, com os seguintes limiares:
+    - >= 0.1: sentimento positivo
+    - <= -0.1: sentimento negativo
+    - entre -0.1 e 0.1: sentimento neutro
 
     Args:
-        texto (str): Texto da avaliação.
+        texto (str): Texto da avaliação a ser analisado.
 
     Returns:
-        str: Classificação 'positiva', 'negativa' ou 'neutra'.
+        str: A classificação do sentimento ('positiva', 'negativa' ou 'neutra').
     """
     scores = analyzer.polarity_scores(texto)
     compound = scores["compound"]
