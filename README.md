@@ -128,9 +128,14 @@ A análise de sentimento foi implementada inicialmente com o algoritmo VADER, po
 
 ### Otimização com Tradução Automática
 
-Embora o desafio não exigisse alta acurácia, foi adotada uma estratégia adicional para melhorar a qualidade das classificações: os textos em português são traduzidos automaticamente para inglês antes da aplicação do VADER. Essa abordagem simples e leve elevou a acurácia de 30% para 70% no conjunto de testes fornecido, sem necessidade de modelos pesados ou fine-tuning.
+Embora o desafio não exigisse alta acurácia, foi adotada uma estratégia adicional para melhorar a qualidade das classificações: os textos em português são traduzidos automaticamente para inglês antes da aplicação do VADER. Essa abordagem simples e leve elevou a acurácia de 30% para até 70% no conjunto de testes fornecido, sem necessidade de modelos pesados ou fine-tuning.
 
-Essa escolha foi feita com o objetivo de melhorar o desempenho da classificação sem comprometer a leveza e a simplicidade da aplicação, mantendo a compatibilidade com o escopo do desafio proposto.
+A variação na acurácia depende diretamente do threshold escolhido para o `compound score` do VADER:
+
+* Com configuração **mais permissiva** (threshold ±0.1), foi possível atingir **até 70% de acerto**.
+* Com configuração **mais conservadora** (threshold ±0.4), a acurácia ficou em torno de **60%**, com menor risco de falsos positivos (ex: classificar algo neutro como positivo).
+
+Essa escolha representa um equilíbrio entre sensibilidade e precisão, e demonstra atenção prática à calibragem do classificador de acordo com o comportamento dos dados.
 
 ### Flexibilidade para evolução
 
@@ -139,3 +144,5 @@ A arquitetura da API está preparada para suportar facilmente a substituição d
 O arquivo `test_examples_dataset.py` foi criado para validar automaticamente os exemplos fornecidos no anexo do teste técnico. Ele permite comparar a saída do classificador com os rótulos esperados e testar melhorias iterativas.
 
 ---
+
+> 📅 Desafio: "Teste Prático Desenvolvedor Back-End Python" — WeOn
