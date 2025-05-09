@@ -126,7 +126,7 @@ sentiment_api/
 
 A análise de sentimento foi implementada inicialmente com o algoritmo VADER, por sua leveza e simplicidade. No entanto, mesmo com ajustes de thresholds, o VADER apresenta limitações consideráveis para textos em português — especialmente em avaliações mais complexas ou ambíguas.
 
-### ✨ Otimização com Tradução Automática
+### Otimização com Tradução Automática
 
 Embora o desafio não exigisse alta acurácia, foi adotada uma estratégia adicional para melhorar a qualidade das classificações: os textos em português são traduzidos automaticamente para inglês antes da aplicação do VADER. Essa abordagem simples e leve elevou a acurácia de 30% para 70% no conjunto de testes fornecido, sem necessidade de modelos pesados ou fine-tuning.
 
