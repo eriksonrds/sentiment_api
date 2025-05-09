@@ -144,5 +144,3 @@ A arquitetura da API está preparada para suportar facilmente a substituição d
 O arquivo `test_examples_dataset.py` foi criado para validar automaticamente os exemplos fornecidos no anexo do teste técnico. Ele permite comparar a saída do classificador com os rótulos esperados e testar melhorias iterativas.
 
 ---
-
-> 📅 Desafio: "Teste Prático Desenvolvedor Back-End Python" — WeOn
