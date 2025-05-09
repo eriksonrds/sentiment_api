@@ -101,20 +101,23 @@ pytest
 ```
 sentiment_api/
 ├── app/
+│   ├── __init__.py
 │   ├── database.py
 │   ├── main.py
 │   ├── models.py
-│   ├── routes/
-│   │   └── reviews.py
 │   ├── schemas.py
-│   └── sentiment.py
+│   ├── sentiment.py
+│   └── routes/
+│       └── reviews.py
 ├── tests/
 │   ├── test_reviews.py
 │   └── test_examples_dataset.py
-├── run_db_setup.py
-├── requirements.txt
 ├── docker-compose.yml
-└── README.md
+├── load_examples.py
+├── README.md
+├── requirements.txt
+├── run_db_setup.py
+└── setup.cfg
 ```
 
 ---
