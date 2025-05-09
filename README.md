@@ -123,8 +123,16 @@ sentiment_api/
 
 A análise de sentimento foi implementada inicialmente com o algoritmo VADER, por sua leveza e simplicidade. No entanto, mesmo com ajustes de thresholds, o VADER apresenta limitações consideráveis para textos em português — especialmente em avaliações mais complexas ou ambíguas.
 
-Alternativas com modelos pré-treinados (ex: BERT multilíngue) também foram testadas, mas não atingiram uma taxa de acerto aceitável (>7/10) para os exemplos fornecidos no teste técnico.
+### ✨ Otimização com Tradução Automática
 
-A arquitetura da API está preparada para suportar facilmente a substituição do classificador por uma abordagem mais robusta baseada em fine-tuning, como Hugging Face Transformers com dados rotulados específicos.
+Embora o desafio não exigisse alta acurácia, foi adotada uma estratégia adicional para melhorar a qualidade das classificações: os textos em português são traduzidos automaticamente para inglês antes da aplicação do VADER. Essa abordagem simples e leve elevou a acurácia de 30% para 70% no conjunto de testes fornecido, sem necessidade de modelos pesados ou fine-tuning.
 
-O arquivo `test_examples_dataset.py` foi criado para validar automaticamente os exemplos fornecidos no anexo do teste técnico. A atual implementação com VADER não atinge acurácia satisfatória, reforçando a necessidade de um modelo mais robusto para produção.
+Essa escolha foi feita com o objetivo de melhorar o desempenho da classificação sem comprometer a leveza e a simplicidade da aplicação, mantendo a compatibilidade com o escopo do desafio proposto.
+
+### Flexibilidade para evolução
+
+A arquitetura da API está preparada para suportar facilmente a substituição do classificador por uma abordagem mais robusta baseada em modelos da Hugging Face com fine-tuning e embeddings.
+
+O arquivo `test_examples_dataset.py` foi criado para validar automaticamente os exemplos fornecidos no anexo do teste técnico. Ele permite comparar a saída do classificador com os rótulos esperados e testar melhorias iterativas.
+
+---
